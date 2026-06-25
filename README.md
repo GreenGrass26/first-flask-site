@@ -183,3 +183,9 @@ Final Outcome
 I successfully:
 
 Built a Flask web application deployed it on AWS EC2 Made it publicly accessible, pushed it to GitHub and learned to debug when errors arose. 
+
+**Update - to ensure page runs when Secure Shell is not running on host EC2 machine 
+
+nohup flask run --host=0.0.0.0 > flask.log 2>&1 &
+
+this prevents Linux from sending the hangup signal (SIGHUP) when SSH disconnects, and logs both stream 1(regular messages) and stream 2(error messages) into the same log file. 
